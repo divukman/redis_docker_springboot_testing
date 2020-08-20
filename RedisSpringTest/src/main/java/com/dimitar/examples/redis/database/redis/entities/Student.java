@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.redis.core.RedisHash;
 
 
-@RedisHash(value = "Student", timeToLive=10)
+@RedisHash(value = "Student", timeToLive=10) //ttl in seconds, 10 seconds
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
