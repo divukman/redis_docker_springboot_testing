@@ -43,15 +43,6 @@ public class AppConfig {
         listenerContainer.setConnectionFactory(connectionFactory);
         listenerContainer.addMessageListener(expirationListener, new PatternTopic("__keyevent@*__:expired"));
         listenerContainer.setErrorHandler(e -> log.error("There was an error in redis key expiration listener container", e));
-
-        listenerContainer.addMessageListener((message, pattern) -> {
-
-            System.out.println(message);
-
-        }, new PatternTopic("*"));
-
-        System.out.println("listeners setup");
-
         return listenerContainer;
     }
 }

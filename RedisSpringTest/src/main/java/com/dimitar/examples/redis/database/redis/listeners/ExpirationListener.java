@@ -12,8 +12,7 @@ public class ExpirationListener implements MessageListener {
     @Override
     public void onMessage(Message message, byte[] bytes) {
         String key = new String(message.getBody());
-        log.debug("expired key: {}", key);
-        System.out.println("expired key: " +key);
+        log.warn("expired key: {}", key);
     }
 
 }
